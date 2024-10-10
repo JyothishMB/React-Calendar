@@ -17,6 +17,7 @@ const CalendarMonth = (props) => {
     }, [month,year])
 
     const getDaysInMonth = (month, year) => {
+        debugger;
         var date = new Date(year, month, 1);
         const dateString = date.toLocaleDateString('en-us', {
             weekday:'long',
@@ -48,10 +49,16 @@ const CalendarMonth = (props) => {
     }
 
     const gotoPreviousMonth = () => {
-        setMonth(month-1)
+        setMonth(()=>{
+            setYear(month-1<0?year-1:year)
+            return month-1<0?11:month-1
+        })
     }
     const gotoNextMonth = () => {
-        setMonth(month+1)
+        setMonth(()=>{
+            setYear(month+1>11?year+1:year)
+            return month+1>11?0:month+1
+        })
     }
     const gotoPreviousYear = () => {
         setYear(year-1)
