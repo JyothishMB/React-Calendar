@@ -1,0 +1,8 @@
+.default-notification {
+    border-style: solid;
+    border-color: blue;
+    border-width: 0.1em;
+    border-radius: 0.25em;
+    margin-top: 1.5px;
+    margin-bottom: 1.5px;
+}
