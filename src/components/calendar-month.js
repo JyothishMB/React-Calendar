@@ -17,7 +17,6 @@ const CalendarMonth = (props) => {
     }, [month,year])
 
     const getDaysInMonth = (month, year) => {
-        debugger;
         var date = new Date(year, month, 1);
         const dateString = date.toLocaleDateString('en-us', {
             weekday:'long',
