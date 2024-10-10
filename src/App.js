@@ -20,7 +20,7 @@ function App() {
     },
     "October": { 
       "11":{
-        "notifications":["Pooja","Pooja 2"],
+        "notifications":["Pooja","Pooja 2","Pooja","Pooja 2"],
         "isholiday":true
       }
     },
