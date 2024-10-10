@@ -1,0 +1,30 @@
+/* .calendar-day {
+    border-style: solid;
+    border-right: none;
+    border-width: 0.1em;
+    height: 150px;
+    border-color: aliceblue;
+}
+
+.calendar-last-day-of-week {
+    border-style: solid;
+    border-width: 0.1em;
+    height: 150px;
+    border-color: aliceblue;
+} */
+
+.daycell {
+    border: 0.1em;
+    border-style: solid;
+    height: 150px;
+}
+
+.fixedwidth {
+    width: 20%;
+}
+.holiday {
+    border-color: red;
+}
+.workingday {
+    border-color: black;
+}
