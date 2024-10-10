@@ -69,7 +69,7 @@ const CalendarMonth = (props) => {
 
     return (
         <div className="container simple-calendar mt-5">
-            <div className="row row-cols-8">
+            <div className="row row-cols-8 month-header">
                 <div className="col-1 text-start m-1" onClick={gotoPreviousYear}>{"<<"}</div>
                 <div className="col-1 text-start m-1" onClick={gotoPreviousMonth}>{"<"}</div>
                 <div className="col-1 text-end m-1">{monthDisplay}</div>
@@ -78,7 +78,7 @@ const CalendarMonth = (props) => {
                 <div className="col-1 text-end m-1" onClick={gotoNextMonth}>{">"}</div>
                 <div className="col-1 text-end m-1" onClick={gotoNextYear}>{">>"}</div>
             </div>
-            <div className="row row-cols-8 text-center m-1">
+            <div className="row row-cols-8 text-center m-1 week-days-label">
                 <div className="col m-1">Sunday</div>
                 <div className="col m-1">Monday</div>
                 <div className="col m-1">Tuesday</div>
