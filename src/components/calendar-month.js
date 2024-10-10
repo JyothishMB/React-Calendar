@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CalendarDay from "./calendar-day";
 import './calendar-month.css'
 
-const CalendarMonth = () => {
+const CalendarMonth = (props) => {
 
     const [allDays, setAllDays] = useState([])
     const [month, setMonth] = useState(new Date().getMonth())
@@ -24,17 +24,24 @@ const CalendarMonth = () => {
             month:'long'
         })
 
-        let paddingdays = weekdays.indexOf(dateString.split(' ')[2])
-        setMonthDisplay(dateString.split(' ')[0])
-        setYearDisplay(dateString.split(' ')[1])
+        let datesplitvalues = dateString.split(' ')
+        let paddingdays = weekdays.indexOf(datesplitvalues[2])
+        let notificationsforthismonth = props.defaultnotifications[datesplitvalues[0]]
+        setMonthDisplay(datesplitvalues[0])
+        setYearDisplay(datesplitvalues[1])
+        //console.log(notificationsforthismonth)
         var days = [];
         while(paddingdays>0){
-            days.push({date: null, rowindex: null});
+            days.push({date: null, rowindex: null, defaultnotifications:null});
             paddingdays = paddingdays-1;
         }
         while (date.getMonth() === month) {
             let datevalue = new Date(date);
-            days.push({date: datevalue.getDate(), rowindex: datevalue.getDay()});
+            days.push({
+                date: datevalue.getDate(), 
+                rowindex: datevalue.getDay(),
+                defaultnotifications:notificationsforthismonth?notificationsforthismonth[datevalue.getDate()]:null,
+            });
             date.setDate(date.getDate() + 1);
         }
         setAllDays(days)
@@ -76,8 +83,8 @@ const CalendarMonth = () => {
             </div>
             <div className="row row-cols-8">
             {
-                allDays.map((day) => {
-                    return <CalendarDay data={day} />
+                allDays.map((day,index) => {
+                    return <CalendarDay key={index} data={day} />
                 })
             }
             </div>
