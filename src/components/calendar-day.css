@@ -18,6 +18,16 @@
     border-style: solid;
     height: 150px;
 }
+.daycell:hover {
+    border: 0.1em;
+    border-style: dashed;
+    height: auto;
+    background-color: lightyellow;
+}
+.today {
+    font-weight: bolder;
+    font-size: large;
+}
 
 .fixedwidth {
     width: 20%;
