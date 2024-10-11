@@ -27,12 +27,12 @@ const CalendarMonth = (props) => {
         let datesplitvalues = dateString.split(' ')
         let paddingdays = weekdays.indexOf(datesplitvalues[2])
         let notificationsforthismonth = props.defaultnotifications[datesplitvalues[0]]
+        let customnotificationsforthismonth = props.customnotifications[year] ? props.customnotifications[year][datesplitvalues[0]]:null
         setMonthDisplay(datesplitvalues[0])
         setYearDisplay(datesplitvalues[1])
-        //console.log(notificationsforthismonth)
         var days = [];
         while(paddingdays>0){
-            days.push({date: null, rowindex: null, defaultnotifications:null});
+            days.push({date: null, rowindex: null, defaultnotifications:null,customnotifications:null});
             paddingdays = paddingdays-1;
         }
         while (date.getMonth() === month) {
@@ -41,6 +41,8 @@ const CalendarMonth = (props) => {
                 date: datevalue.getDate(), 
                 rowindex: datevalue.getDay(),
                 defaultnotifications:notificationsforthismonth?notificationsforthismonth[datevalue.getDate()]:null,
+                customnotifications:customnotificationsforthismonth?customnotificationsforthismonth[datevalue.getDate()]:null,
+                isToday: datevalue.toDateString() === new Date().toDateString()
             });
             date.setDate(date.getDate() + 1);
         }
