@@ -1,6 +1,7 @@
 import "./calendar-day.css"
 import CustomNotifications from "./custom-notifications";
 import DefaultNotifications from "./default-notifications";
+import Notifications from "./notifications";
 
 const CalendarDay = (props) => {
 
@@ -13,17 +14,23 @@ const CalendarDay = (props) => {
     const dayclass = isHoliday() ? 'grid-item daycell holiday':'grid-item daycell workingday'
     const todayclass = props?.data?.isToday ?
                         'day-label today text-end pe-1 pt-1':'day-label text-end pe-1 pt-1'
+
+    let allNotifications = props?.data?.defaultnotifications + props?.data?.customnotifications
+
     return (
         <div className={dayclass}>
             <div className={todayclass}>{props?.data?.date}</div>
-            <div className="day-notifications">
+            <Notifications 
+                defaultnotifications={props?.data?.defaultnotifications} 
+                customnotifications={props?.data?.customnotifications}/>
+            {/* <div className="day-notifications">
                 {
-                    props?.data?.defaultnotifications && <DefaultNotifications notifications={props?.data?.defaultnotifications} />
+                    props?.data?.defaultnotifications && <DefaultNotifications notifications={props?.data?.defaultnotifications} showall={false} />
                 }
                 {
-                    props?.data?.customnotifications && <CustomNotifications notifications={props?.data?.customnotifications} />
+                    props?.data?.customnotifications && <CustomNotifications notifications={props?.data?.customnotifications} showall={false} />
                 }
-            </div>
+            </div> */}
         </div>
     )
 }
