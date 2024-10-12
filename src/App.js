@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CalendarMonth from './components/calendar-month';
-import Test from './components/test';
 
 function App() {
 
