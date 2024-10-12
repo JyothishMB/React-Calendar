@@ -79,7 +79,7 @@ const CalendarMonth = (props) => {
                     <div className="calendar-col" onClick={gotoNextMonth}>{">"}</div>
                     <div className="calendar-col" onClick={gotoNextYear}>{">>"}</div>
                 </div>
-                <div className="text-center grid-container">
+                <div className="text-center grid-container month-header">
                     <div className='grid-header'>Sunday</div>
                     <div className='grid-header'>Monday</div>
                     <div className='grid-header'>Tuesday</div>
