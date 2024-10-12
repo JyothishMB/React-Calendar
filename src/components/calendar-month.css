@@ -1,3 +1,8 @@
+:root {
+  --one-by-7: 14.08571428571429%;
+}
+
+
 .simple-calendar {
     border-style: solid;
     border-width: 0.25px;
@@ -11,7 +16,7 @@
 .week-days-label {
     font-weight: bold;
 }
-.row-cols-8 > * {
+/* .row-cols-8 > * {
     flex: 0 0 auto;
     width: 12.5%;
   }
@@ -45,4 +50,40 @@
       flex: 0 0 auto;
       width: 12.5%;
     }
+  } */
+
+  
+
+.calendar {
+  width: 100%;
+}
+
+.calendar-col {
+  display: inline-block;
+  width: 14.08571428571429%;
+  margin: 0.1%;
+}
+
+.calendar-col-3 {
+  display: inline-block;
+  width: 42.65714285714287%;
+  margin: 0.1%;
+}
+  .grid-container {
+    display: grid;
+    grid-template-columns: var(--one-by-7) var(--one-by-7) var(--one-by-7) var(--one-by-7) var(--one-by-7) var(--one-by-7) var(--one-by-7);
+    width: 100%;
+  }
+  .grid-header {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin: 1%;
+    padding:2%;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin: 1%;
+    height: 100px;
+    padding:2%;
   }
