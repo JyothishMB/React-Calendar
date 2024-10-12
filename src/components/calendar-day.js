@@ -12,7 +12,7 @@ const CalendarDay = (props) => {
 
     const dayclass = isHoliday() ? 'grid-item daycell holiday':'grid-item daycell workingday'
     const todayclass = props?.data?.isToday ?
-                        'day-label today':'day-label'
+                        'day-label today text-end pe-1 pt-1':'day-label text-end pe-1 pt-1'
     return (
         <div className={dayclass}>
             <div className={todayclass}>{props?.data?.date}</div>
