@@ -10,7 +10,7 @@ const CalendarDay = (props) => {
             || props?.data?.defaultnotifications?.isholiday
     }
 
-    const dayclass = isHoliday() ? 'col daycell m-1 holiday':'col daycell m-1 workingday'
+    const dayclass = isHoliday() ? 'grid-item daycell holiday':'grid-item daycell workingday'
     const todayclass = props?.data?.isToday ?
                         'day-label today':'day-label'
     return (
