@@ -18,6 +18,84 @@
 
 Simple react library (in development) which will work as a plug and play component for managing calendar for any organization.
 
+You can use this as an organizational calendar.
+
+Calendar pages are available through npm.
+
+Installation can be done using npm command.
+
+```
+npm i react-calendar-pages
+```
+
+Once installed please import the required modules.
+
+```javascript
+import CalendarMonth from 'react-calendar-pages'
+```
+
+After this the calendar month can be used to render the current month.
+
+```javascript
+<CalendarMonth  defaultnotifications={defaultnotifications}  customnotifications={customnotifications} />
+```
+
+defaultnotification and customnotifications can be passed as JSON objects. Here is a sample.
+
+```json
+const defaultnotifications = {
+    "January": {
+      "26": {
+        "notifications": ["Republic Day"],
+        "isholiday": true
+      }
+    },
+    "February": {
+      "14": {
+        "notifications": ["Valentine's day"],
+        "isholiday": false
+      }
+    },
+    "October": {
+      "11": {
+        "notifications": ["Pooja", "Pooja 2", "Pooja", "Pooja 2"],
+        "isholiday": true
+      }
+    },
+  }
+
+  const customnotifications = {
+    "2024": {
+      "January": {
+        "10": {
+          "notifications": ["John's Birthday"],
+          "isholiday": false
+        }
+      },
+      "February": {
+        "13": {
+          "notifications": ["Jack on leave"],
+          "isholiday": false
+        }
+      },
+      "October": {
+        "11": {
+          "notifications": ["Darwy's Birthday","Aby's birthday"],
+          "isholiday": false
+        },
+        "14": {
+          "notifications": ["Jim's Birthday","Tom on leave","Harley on leave"],
+          "isholiday": false
+        },
+        "16": {
+          "notifications": ["David's Birthday","David on leave"],
+          "isholiday": false
+        }
+      }
+    }
+  }
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
